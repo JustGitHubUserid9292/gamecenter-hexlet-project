@@ -1,4 +1,7 @@
-console.log('Welcome to Rock Paper Scissors!');
+#!/usr/bin/env node
+import readlineSync from 'readline-sync'
+
+console.log("Welcome to Rock Paper Scissors!");
 console.log('In this game, you have to beat the computer in three rounds.');
 
 let isPlaying = true;
@@ -6,7 +9,7 @@ let playerScore = 0;
 let computerScore = 0;
 
 const getPlayerMove = () => {
-  const move = prompt('Your move: ');
+  const move = readlineSync.question('Your move ');
   if (move === null) {
     isPlaying = false;
   }
@@ -60,7 +63,7 @@ const startNewGame = () => {
   computerScore = 0;
 };
 
-const name = prompt('May I have your name? ');
+const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 
 while (isPlaying) {
@@ -75,7 +78,7 @@ while (isPlaying) {
 
   if (playerScore === 3 || computerScore === 3) {
     displayFinalResult();
-    const playAgain = prompt("Do you want to play again? (yes/no): ");
+    const playAgain = readlineSync.question("Do you want to play again? (yes/no): ");
     if (playAgain.toLowerCase() !== 'yes') {
       isPlaying = false;
       console.clear()
