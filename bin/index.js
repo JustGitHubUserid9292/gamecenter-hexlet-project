@@ -8,6 +8,7 @@ let isPlaying = true;
 let playerScore = 0;
 let computerScore = 0;
 
+console.log('hello');
 const getPlayerMove = () => {
   const move = readlineSync.question('Your move ');
   if (move === null) {
