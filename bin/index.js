@@ -1,92 +1,32 @@
 #!/usr/bin/env node
 
-import readlineSync from 'readline-sync'
-
 import inquirer from "inquirer";
 
-console.log("Welcome to Rock Paper Scissors!");
-console.log('In this game, you have to beat the computer in three rounds.');
+import readlineSync from 'readline-sync'
 
+import rps from "../games/rps.js";
+
+console.log('Welcome to Game Center!')
 const name = readlineSync.question('May I have your name? ');
-console.log(`Hello, ${name}!`);
+console.log(`Hello, ${name}!`)
 
-let playerScore = 0;
-let computerScore = 0;
-
-playGame();
-
-function playGame() {
-  if (playerScore < 3 && computerScore < 3) {
-    inquirer
-      .prompt([
-        {
-          type: 'list',
-          name: 'userChoice',
-          message: 'Your move: ',
-          choices: ['rock', 'scissors', 'paper'],
-        },
-      ])
-      .then((answers) => {
-        const userChoice = answers.userChoice;
-        const computerChoice = generateComputerChoice();
-
-        console.log("Opponent's move:", computerChoice);
-        displayRoundResult(determineWinner(userChoice, computerChoice));
-
-        playGame(); 
-      });
-  } else {
-    displayFinalResult()
-    if (readlineSync.keyInYNStrict("Do you want to play again?")) {
-        startNewGame();
-    } else console.clear()
-  }
-  }
-
-function generateComputerChoice() {
-    const moves = ['rock', 'scissors', 'paper'];
-    const randomIndex = Math.floor(Math.random() * moves.length);
-    return moves[randomIndex];
-}
-
-function determineWinner(userChoice, computerChoice) {
-    if (userChoice === computerChoice) {
-        return 'tie';
-      } else if (
-        (userChoice === 'rock' && computerChoice === 'scissors') ||
-        (userChoice === 'scissors' && computerChoice === 'paper') ||
-        (userChoice === 'paper' && computerChoice === 'rock')
-      ) {
-        return 'win';
-      } else {
-        return 'lose';
+inquirer
+  .prompt([
+    {
+      type: 'list',
+      name: 'userChoice',
+      message: 'Choice the game',
+      choices: ['Rock Papers Scissors', 'Exit']
     }
-}
-
-function displayRoundResult(result) {
-    if (result === 'tie') {
-      console.log('Once again!');
-    } else if (result === 'win') {
-      playerScore += 1;
-      console.log(`You win ${playerScore} round(s)!`);
-    } else {
-      computerScore += 1;
-      console.log(`Computer wins ${computerScore} round(s)!`);
+  ])
+  .then((answers) => {
+    const userChoice = answers.userChoice;
+    if (userChoice === 'Rock Papers Scissors') {
+      console.clear()
+      rps(name)
     }
-};
-
-const displayFinalResult = () => {
-    if (playerScore === 3) {
-      console.log(`Congratulations, ${name}!`);
-    } else {
-      console.log('Computer wins!');
+    if (userChoice === 'Exit') {
+      console.clear()
+      console.log(`See you next time, ${name}!`)
     }
-    console.log(`Score: ${playerScore}:${computerScore}`);
-  };
-
-function startNewGame() {
-    console.clear();
-    playerScore = 0;
-    computerScore = 0;
-    playGame();
-}
+  });
