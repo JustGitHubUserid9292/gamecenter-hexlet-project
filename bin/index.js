@@ -5,6 +5,8 @@ import inquirer from 'inquirer';
 
 import rps from '../games/rps.js';
 
+import words from '../games/words.js';
+
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
@@ -18,7 +20,7 @@ export default function mainMenu() {
         type: 'list',
         name: 'userChoice',
         message: 'Choose the game',
-        choices: ['Rock Paper Scissors', 'Exit'],
+        choices: ['Rock Paper Scissors', 'The Words Game', 'Exit'],
       },
     ])
     .then((answers) => {
@@ -27,8 +29,13 @@ export default function mainMenu() {
         console.clear();
         rps(name);
       }
+      if (userChoice === 'The Words Game') {
+        console.clear()
+        words(name)
+      }
       if (userChoice === 'Exit') {
         console.clear();
+        console.log(' ');
         console.log(`See you next time, ${name}!`);
       }
     });
