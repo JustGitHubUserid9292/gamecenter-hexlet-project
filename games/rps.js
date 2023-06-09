@@ -2,6 +2,8 @@ import readlineSync from 'readline-sync'
 
 import inquirer from "inquirer";
 
+import mainMenu  from '../bin/index.js';
+
 export default function rps(name) {
 
 console.log("Welcome to Rock Paper Scissors!");
@@ -36,8 +38,10 @@ function playGame() {
     displayFinalResult()
     if (readlineSync.keyInYNStrict("Do you want to play again?")) {
         startNewGame();
-    } else console.clear()
-           returnToMainMenu()
+    } else {
+        console.clear()
+        mainMenu()
+    }
   }
   }
 
@@ -88,9 +92,4 @@ function startNewGame() {
     computerScore = 0;
     playGame();
 }
-async function returnToMainMenu() {
-    const gamecenterModule = await import('../bin/index.js');
-    const mainMenu = gamecenterModule.default;
-    mainMenu()
-  }
 }
