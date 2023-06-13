@@ -5,32 +5,72 @@ import inquirer from "inquirer";
 import mainMenu from '../bin/index.js';
 
 const questions = [
-    'What is a citrus fruit that is yellow and sour, often used to make lemonade?',
-    'What is a small, furry mammal that can roll into a ball for protection?',
-    "What is a popular board game that involves moving pieces diagonally and capturing opponents' pieces?",
-    'What is a season of the year that is known for warm weather, blooming flowers, and longer daylight hours?',
-    'What is a famous painting created by Leonardo da Vinci that depicts a woman with outstretched arms and legs?',
-    'What is a popular fast food item made from ground beef, lettuce, cheese, and a bun?',
-    'What is a country in Europe known for its famous landmarks such as the Eiffel Tower and Louvre Museum?',
-  ];
-const answers = [
-    ['Apple', 'Orange', 'Banana', 'Lemon'],
-    ['Rabbit', 'Hamster', 'Hedgehog', 'Squirrel'],
-    ['Chess', 'Scrabble', 'Monopoly', 'Checkers'],
-    ['Summer', 'Winter', 'Spring', 'Autumn'],
-    ['The Scream', 'Starry Night', 'The Birth of Venus', 'Vitruvian Man'],
-    ['Pizza', 'Hamburger', 'Hot Dog', 'French Fries'],
-    ['Germany', 'Italy', 'France', 'Spain'],
-  ];
-const correctAnswers = [
-    'Lemon',
-    'Hedgehog',
-    'Checkers',
-    'Spring',
-    'Vitruvian Man',
-    'Hamburger',
-    'France',
-  ];
+  {
+    question: 'What is the capital of France?',
+    answers: ['Paris', 'London', 'Madrid'],
+    correctAnswer: 'Paris'
+  },
+  {
+    question: 'Which planet is known as the Red Planet?',
+    answers: ['Venus', 'Mars', 'Jupiter'],
+    correctAnswer: 'Mars'
+  },
+  {
+    question: 'Who painted the Mona Lisa?',
+    answers: ['Leonardo da Vinci', 'Vincent van Gogh', 'Pablo Picasso'],
+    correctAnswer: 'Leonardo da Vinci'
+  },
+  {
+    question: 'What is the tallest mountain in the world?',
+    answers: ['Mount Kilimanjaro', 'Mount Everest', 'Mount Fuji'],
+    correctAnswer: 'Mount Everest'
+  },
+  {
+    question: 'What is the chemical symbol for gold?',
+    answers: ['Ag', 'Au', 'Hg'],
+    correctAnswer: 'Au'
+  },
+  {
+    question: 'What is the capital of Canada?',
+    answers: ['Toronto', 'Ottawa', 'Vancouver'],
+    correctAnswer: 'Ottawa'
+  },
+  {
+    question: 'Which animal is known as the "king of the jungle"?',
+    answers: ['Lion', 'Tiger', 'Giraffe'],
+    correctAnswer: 'Lion'
+  },
+  {
+    question: 'Who wrote the novel "Pride and Prejudice"?',
+    answers: ['Jane Austen', 'Emily Bronte', 'Charlotte Bronte'],
+    correctAnswer: 'Jane Austen'
+  },
+  {
+    question: 'Which country is home to the kangaroo?',
+    answers: ['Australia', 'South Africa', 'Brazil'],
+    correctAnswer: 'Australia'
+  },
+  {
+    question: 'What is the chemical symbol for silver?',
+    answers: ['Si', 'S', 'Ag'],
+    correctAnswer: 'Ag'
+  },
+  {
+    question:  'What is a season of the year that is known for warm weather, blooming flowers, and longer daylight hours?',
+    answers: ['Summer', 'Winter', 'Spring', 'Autumn'],
+    correctAnswer: 'Spring'
+  },
+  {
+    question: 'What is a country in Europe known for its famous landmarks such as the Eiffel Tower and Louvre Museum?',
+    answers:  ['Germany', 'Italy', 'France', 'Spain'],
+    correctAnswer: 'France'
+  },
+  {
+    question:  'What is a famous painting created by Leonardo da Vinci that depicts a woman with outstretched arms and legs?',
+    answers: ['The Scream', 'Starry Night', 'The Birth of Venus', 'Vitruvian Man'],
+    correctAnswer: 'Vitruvian Man'
+  },
+];
 
 export default function words(name) {
 
@@ -39,24 +79,26 @@ export default function words(name) {
 
    let correctCount = 0
    let attempt = 7
+   let index = 0
 
    playGame()
- 
+   shuffleArray(questions)
+
    function playGame() {
-    if (attempt !== 0 && correctCount < 5) {
-        let random = randomNumber()
+    if (attempt !== 0 && correctCount < 5 && index !== 7) {
+      index += 1
         inquirer
           .prompt([
             {
               type: 'list',
               name: 'userChoice',
-              message: `${questions[random]}`,
-              choices: answers[random],
+              message: `${questions[index].question}`,
+              choices: questions[index].answers,
             },
           ])
           .then((answers) => {
             const userChoice = answers.userChoice;
-            displayRoundResult(userChoice, random)
+            displayRoundResult(userChoice, index)
             playGame(); 
           });
       } else {
@@ -69,12 +111,16 @@ export default function words(name) {
         }
       }
    }
-   function randomNumber() {
-    return Math.floor(Math.random() * (0 - 7) + 7);
+   
+   function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
   }
   
-   function isCorrect(answer, number) {
-    return answer === correctAnswers[number]
+   function isCorrect(answer, index) {
+    return answer === questions[index].correctAnswer
    }
 
    function displayRoundResult(answer, number) {
@@ -97,7 +143,9 @@ export default function words(name) {
    function startNewGame() {
     console.clear();
     correctCount = 0;
+    index = 0;
     attempt = 7;
+    shuffleArray(questions)
     playGame();
 }
 }
