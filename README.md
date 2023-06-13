@@ -36,6 +36,3 @@ npm test
 - To start the GameCenter application, use the following command:
 gamecenter
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
