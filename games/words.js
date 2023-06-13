@@ -81,12 +81,11 @@ export default function words(name) {
    let attempt = 7
    let index = 0
 
-   playGame()
    shuffleArray(questions)
+   playGame()
 
    function playGame() {
     if (attempt !== 0 && correctCount < 5 && index !== 7) {
-      index += 1
         inquirer
           .prompt([
             {
@@ -99,6 +98,7 @@ export default function words(name) {
           .then((answers) => {
             const userChoice = answers.userChoice;
             displayRoundResult(userChoice, index)
+            index += 1
             playGame(); 
           });
       } else {
