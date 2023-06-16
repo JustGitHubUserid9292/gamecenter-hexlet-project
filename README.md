@@ -36,3 +36,4 @@ npm test
 - To start the GameCenter application, use the following command:
 gamecenter
 
+## Demonstration of games 
