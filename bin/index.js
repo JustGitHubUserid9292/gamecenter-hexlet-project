@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-import readlineSync from 'readline-sync'
+import readlineSync from 'readline-sync';
 
 import inquirer from 'inquirer';
 
 import rps from '../games/rps.js';
 
 import words from '../games/words.js';
+
+import slotmachine from '../games/slotmachine.js';
 
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
@@ -20,7 +22,7 @@ export default function mainMenu() {
         type: 'list',
         name: 'userChoice',
         message: 'Choose the game',
-        choices: ['Rock Paper Scissors', 'The Words Game', 'Exit'],
+        choices: ['Rock Paper Scissors', 'The Words Game', 'Slot Machine', 'Exit'],
       },
     ])
     .then((answers) => {
@@ -32,6 +34,10 @@ export default function mainMenu() {
       if (userChoice === 'The Words Game') {
         console.clear()
         words(name)
+      }
+      if (userChoice === 'Slot Machine') {
+        console.clear()
+        slotmachine(name)
       }
       if (userChoice === 'Exit') {
         console.clear();
