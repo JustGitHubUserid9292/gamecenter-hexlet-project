@@ -36,7 +36,7 @@ export default function slotmachine(name) {
         type: 'list',
         name: 'userChoice',
         message: 'Spin?',
-        choices: ['Yes', 'Exit'],
+        choices: ['Spin', 'Exit'],
       },
     ])
     .then((answers) => {
