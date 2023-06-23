@@ -5,7 +5,7 @@ import mainMenu  from '../bin/index.js';
 const symbols = ['7', '%', '$', '#', '*']
 
 function randomIndex() {
-   return Math.floor(Math.random() * (0 - 4) + 4);
+   return Math.floor(Math.random() * (0 - 5) + 5);
 }
 
 function playGame(name) {
@@ -24,7 +24,7 @@ function playGame(name) {
             '             ║              ║\n' +
             '             ╚══════════════╝');
     if (s1 === s2 && s2 === s3 && s1 === s3) {
-      console.log('               JACKPOT!                    ')
+      console.log('                 JACKPOT!')
       console.log(`Congratulations, ${name} you're very lucky!`)
     }      
 }

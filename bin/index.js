@@ -9,6 +9,7 @@ import words from '../games/words.js';
 
 import slotmachine from '../games/slotmachine.js';
 
+console.clear()
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
