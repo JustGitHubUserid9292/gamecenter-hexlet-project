@@ -28,7 +28,8 @@ function playGame() {
       .then((answers) => {
         const userChoice = answers.userChoice;
         const computerChoice = generateComputerChoice();
-
+        
+        console.clear()
         console.log("Opponent's move:", computerChoice);
         displayRoundResult(determineWinner(userChoice, computerChoice));
 
