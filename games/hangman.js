@@ -96,6 +96,7 @@ const restart = (name) => {
     startNewGame(name);
   } else {
     console.clear();
+    mistakes = 0
     mainMenu();
   }
 };
