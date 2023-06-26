@@ -12,10 +12,10 @@ const DICE_ART = {
 }
 
 function playGame(name) {
-  const p1 = Math.floor(Math.random() * (1 - 6) + 6);
-  const p2 = Math.floor(Math.random() * (1 - 6) + 6);
-  const c1 = Math.floor(Math.random() * (1 - 6) + 6);
-  const c2 = Math.floor(Math.random() * (1 - 6) + 6);
+  const p1 = Math.floor(Math.random() * (1 - 7) + 7);
+  const p2 = Math.floor(Math.random() * (1 - 7) + 7);
+  const c1 = Math.floor(Math.random() * (1 - 7) + 7);
+  const c2 = Math.floor(Math.random() * (1 - 7) + 7);
   console.clear()
   console.log('Welcome to Shoot The Dice! Roll the dice to compete against the computer and try to get more score than it!')
   console.log('Your result:')
