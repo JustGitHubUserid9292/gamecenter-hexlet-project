@@ -44,7 +44,7 @@ export default function mainMenu() {
       }
       if (userChoice === 'Shoot The Dice') {
         console.clear()
-        shootthedice()
+        shootthedice(name)
       }
       if (userChoice === 'Exit') {
         console.clear();
