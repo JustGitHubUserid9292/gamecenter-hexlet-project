@@ -9,6 +9,8 @@ import words from '../games/words.js';
 
 import slotmachine from '../games/slotmachine.js';
 
+import shootthedice from '../games/shootthedice.js';
+
 console.clear()
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
@@ -23,7 +25,7 @@ export default function mainMenu() {
         type: 'list',
         name: 'userChoice',
         message: 'Choose the game',
-        choices: ['Rock Paper Scissors', 'The Words Game', 'Slot Machine', 'Exit'],
+        choices: ['Rock Paper Scissors', 'The Words Game', 'Slot Machine', 'Shoot The Dice', 'Exit'],
       },
     ])
     .then((answers) => {
@@ -39,6 +41,10 @@ export default function mainMenu() {
       if (userChoice === 'Slot Machine') {
         console.clear()
         slotmachine(name)
+      }
+      if (userChoice === 'Shoot The Dice') {
+        console.clear()
+        shootthedice()
       }
       if (userChoice === 'Exit') {
         console.clear();
