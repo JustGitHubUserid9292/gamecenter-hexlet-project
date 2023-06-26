@@ -25,7 +25,7 @@ export default function mainMenu() {
         type: 'list',
         name: 'userChoice',
         message: 'Choose the game',
-        choices: ['Rock Paper Scissors', 'The Words Game', 'Slot Machine', 'Shoot The Dice', 'Exit'],
+        choices: ['Rock Paper Scissors', 'The Words Game', 'Slot Machine', 'Shoot The Dice', 'Hangman', 'Exit'],
       },
     ])
     .then((answers) => {
@@ -45,6 +45,10 @@ export default function mainMenu() {
       if (userChoice === 'Shoot The Dice') {
         console.clear()
         shootthedice(name)
+      }
+      if (userChoice === 'Hangman') {
+        console.clear()
+        //hangman()
       }
       if (userChoice === 'Exit') {
         console.clear();
