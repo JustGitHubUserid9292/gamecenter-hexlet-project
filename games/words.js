@@ -97,6 +97,7 @@ export default function words(name) {
           ])
           .then((answers) => {
             const userChoice = answers.userChoice;
+            console.clear()
             displayRoundResult(userChoice, index)
             index += 1
             playGame(); 
