@@ -12,13 +12,14 @@ const DICE_ART = {
 }
 
 function playGame(name) {
-  const p1 = Math.floor(Math.random() * (0 - 6) + 6);
-  const p2 = Math.floor(Math.random() * (0 - 6) + 6);
-  const c1 = Math.floor(Math.random() * (0 - 6) + 6);
-  const c2 = Math.floor(Math.random() * (0 - 6) + 6);
+  const p1 = Math.floor(Math.random() * (1 - 6) + 6);
+  const p2 = Math.floor(Math.random() * (1 - 6) + 6);
+  const c1 = Math.floor(Math.random() * (1 - 6) + 6);
+  const c2 = Math.floor(Math.random() * (1 - 6) + 6);
   console.clear()
-  console.log('Welcome to the Shoot The Dice, in this game you have to find out which is stronger than your luck or the computer!')
-  console.log(`Your result: \n${DICE_ART[p1] + ' ' + DICE_ART[p2]}    Computer result: \n${DICE_ART[p1] + ' ' + DICE_ART[p2]}`)
+  console.log('Welcome to Shoot The Dice! Roll the dice to compete against the computer and try to get more score than it!')
+  console.log('Your result:')
+  console.log(`${DICE_ART[p1]}  ${DICE_ART[p2]}`)
 }
 
 export default function shootthedice(name) {
@@ -38,7 +39,7 @@ export default function shootthedice(name) {
         mainMenu()
       } else { 
       playGame(name) 
-      shotthedice(name)
+      shootthedice(name)
       }
     });
 }
