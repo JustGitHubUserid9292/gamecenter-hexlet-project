@@ -103,6 +103,7 @@ const restart = (name) => {
 
 const startNewGame = (name) => {
   mistakes = 0;
+  console.clear()
   hangman(name);
 };
 
