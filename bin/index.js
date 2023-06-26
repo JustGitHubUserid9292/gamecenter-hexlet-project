@@ -11,6 +11,8 @@ import slotmachine from '../games/slotmachine.js';
 
 import shootthedice from '../games/shootthedice.js';
 
+import hangman from '../games/hangman.js';
+
 console.clear()
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
@@ -48,7 +50,7 @@ export default function mainMenu() {
       }
       if (userChoice === 'Hangman') {
         console.clear()
-        //hangman()
+        hangman(name)
       }
       if (userChoice === 'Exit') {
         console.clear();
