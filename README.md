@@ -36,4 +36,19 @@ npm test
 - To start the GameCenter application, use the following command:
 gamecenter
 
-## Demonstration of games 
+## Demonstration of games
+#### Rock Paper Scissors
+[![asciicast](https://asciinema.org/a/6LEAOr33EaC4YGKiWqAMPlEX5.svg)](https://asciinema.org/a/6LEAOr33EaC4YGKiWqAMPlEX5)
+
+#### The Words Game
+[![asciicast](https://asciinema.org/a/GCs80syIq53rkNnxunQnkrKWy.svg)](https://asciinema.org/a/GCs80syIq53rkNnxunQnkrKWy)
+
+ 
+#### Slot Machine
+[![asciicast](https://asciinema.org/a/LSLmzLEJQAI1HW2UuhnrFUgFk.svg)](https://asciinema.org/a/LSLmzLEJQAI1HW2UuhnrFUgFk)
+
+#### Shoot The Dice
+[![asciicast](https://asciinema.org/a/hROi3i7ovpCLA8FzaOeChQhqi.svg)](https://asciinema.org/a/hROi3i7ovpCLA8FzaOeChQhqi)
+
+#### Hangman
+[![asciicast](https://asciinema.org/a/fSWhu5HWt08FWYZnvUTz0RJPm.svg)](https://asciinema.org/a/fSWhu5HWt08FWYZnvUTz0RJPm)
