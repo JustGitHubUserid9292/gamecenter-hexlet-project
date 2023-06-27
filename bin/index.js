@@ -1,4 +1,9 @@
 #!/usr/bin/env node
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-console */
+/* eslint-disable no-use-before-define */
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-cycle */
 import readlineSync from 'readline-sync';
 
 import inquirer from 'inquirer';
@@ -13,12 +18,12 @@ import shootthedice from '../games/shootthedice.js';
 
 import hangman from '../games/hangman.js';
 
-console.clear()
+console.clear();
 console.log('Welcome to Game Center!');
 const name = readlineSync.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
 
-mainMenu()
+mainMenu();
 
 export default function mainMenu() {
   inquirer
@@ -37,20 +42,20 @@ export default function mainMenu() {
         rps(name);
       }
       if (userChoice === 'The Words Game') {
-        console.clear()
-        words(name)
+        console.clear();
+        words(name);
       }
       if (userChoice === 'Slot Machine') {
-        console.clear()
-        slotmachine(name)
+        console.clear();
+        slotmachine(name);
       }
       if (userChoice === 'Shoot The Dice') {
-        console.clear()
-        shootthedice(name)
+        console.clear();
+        shootthedice(name);
       }
       if (userChoice === 'Hangman') {
-        console.clear()
-        hangman(name)
+        console.clear();
+        hangman(name);
       }
       if (userChoice === 'Exit') {
         console.clear();

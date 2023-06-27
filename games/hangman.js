@@ -1,3 +1,8 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable no-console */
+/* eslint-disable no-use-before-define */
+/* eslint-disable import/no-cycle */
+/* eslint-disable import/extensions */
 import readlineSync from 'readline-sync';
 import mainMenu from '../bin/index.js';
 
@@ -83,34 +88,34 @@ const hangmanArt = {
    / \\  |
         |
   ======
-  `
+  `,
 };
 
-const words = ["cat", "dog", "sun", "book", "tree", "ball", "happy", "rain", "car", "moon"];
+const words = ['cat', 'dog', 'sun', 'book', 'tree', 'ball', 'happy', 'rain', 'car', 'moon'];
 
 let mistakes = 0;
 const regex = /\w/g;
 
 const restart = (name) => {
-  if (readlineSync.keyInYNStrict("Do you want to play again?")) {
+  if (readlineSync.keyInYNStrict('Do you want to play again?')) {
     startNewGame(name);
   } else {
     console.clear();
-    mistakes = 0
+    mistakes = 0;
     mainMenu();
   }
 };
 
 const startNewGame = (name) => {
   mistakes = 0;
-  console.clear()
+  console.clear();
   hangman(name);
 };
 
 export default function hangman(name) {
   const word = words[Math.floor(Math.random() * words.length)];
   const guessedWord = word.split('');
-  let guess = word.replace(regex, '*').split('');
+  const guess = word.replace(regex, '*').split('');
   let flag = '';
 
   while (flag === '') {
