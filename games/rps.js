@@ -6,7 +6,9 @@ import readlineSync from 'readline-sync';
 
 import inquirer from 'inquirer';
 
-import mainMenu from '../bin/index.js';
+import mainMenu from '../games/mainMenu.js';
+
+import { user } from '../bin/index.js';
 
 export default function rps(name) {
   console.log('Welcome to Rock Paper Scissors!');
@@ -44,7 +46,7 @@ export default function rps(name) {
         startNewGame();
       } else {
         console.clear();
-        mainMenu();
+        mainMenu(user);
       }
     }
   }

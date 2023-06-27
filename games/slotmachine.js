@@ -3,7 +3,9 @@
 /* eslint-disable import/extensions */
 import inquirer from 'inquirer';
 
-import mainMenu from '../bin/index.js';
+import mainMenu from '../games/mainMenu.js';
+
+import { user } from '../bin/index.js';
 
 const symbols = ['7', '%', '$', '#', '*'];
 
@@ -46,7 +48,7 @@ export default function slotmachine(name) {
       const { userChoice } = answers;
       if (userChoice === 'Exit') {
         console.clear();
-        mainMenu();
+        mainMenu(user);
       } else {
         playGame(name);
         slotmachine(name);

@@ -4,7 +4,9 @@
 /* eslint-disable import/no-cycle */
 import inquirer from 'inquirer';
 
-import mainMenu from '../bin/index.js';
+import mainMenu from '../games/mainMenu.js';
+
+import { user } from '../bin/index.js';
 
 const DICE_ART = {
   1: '┌─────────┐\n│         │\n│    ●    │\n│         │\n└─────────┘',
@@ -57,7 +59,7 @@ export default function shootthedice(name) {
       const { userChoice } = answers;
       if (userChoice === 'Exit') {
         console.clear();
-        mainMenu();
+        mainMenu(user);
       } else {
         playGame(name);
         shootthedice(name);

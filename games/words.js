@@ -9,7 +9,9 @@ import readlineSync from 'readline-sync';
 
 import inquirer from 'inquirer';
 
-import mainMenu from '../bin/index.js';
+import mainMenu from '../games/mainMenu.js';
+
+import { user } from '../bin/index.js';
 
 const questions = [
   {
@@ -114,7 +116,7 @@ export default function words(name) {
         startNewGame();
       } else {
         console.clear();
-        mainMenu();
+        mainMenu(user);
       }
     }
   }

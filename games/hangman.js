@@ -4,7 +4,10 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/extensions */
 import readlineSync from 'readline-sync';
-import mainMenu from '../bin/index.js';
+
+import mainMenu from '../games/mainMenu.js';
+
+import { user } from '../bin/index.js';
 
 const hangmanArt = {
   0: '',
@@ -102,7 +105,7 @@ const restart = (name) => {
   } else {
     console.clear();
     mistakes = 0;
-    mainMenu();
+    mainMenu(name);
   }
 };
 
@@ -139,7 +142,7 @@ export default function hangman(name) {
       if (mistakes === 9) {
         flag = 'lose';
         console.log(`You lose! The word was: ${word}`);
-        restart(name);
+        restart(user);
       }
     }
 
