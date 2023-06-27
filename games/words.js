@@ -1,3 +1,4 @@
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-shadow */

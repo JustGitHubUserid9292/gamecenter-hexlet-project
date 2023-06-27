@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable prefer-destructuring */
 /* eslint-disable no-console */
 /* eslint-disable no-use-before-define */

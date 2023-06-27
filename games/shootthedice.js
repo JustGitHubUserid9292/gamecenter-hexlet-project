@@ -4,7 +4,7 @@
 /* eslint-disable import/no-cycle */
 import inquirer from 'inquirer';
 
-import mainMenu from '../games/mainMenu.js';
+import mainMenu from './mainMenu.js';
 
 import { user } from '../bin/index.js';
 

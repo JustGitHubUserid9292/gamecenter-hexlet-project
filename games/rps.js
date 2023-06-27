@@ -1,3 +1,4 @@
+/* eslint-disable import/no-useless-path-segments */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-console */
 /* eslint-disable import/no-cycle */
