@@ -1,3 +1,4 @@
+[![ESlint](https://github.com/JustGitHubUserid9292/gamecenter-hexlet-project/actions/workflows/main.yml/badge.svg)](https://github.com/JustGitHubUserid9292/gamecenter-hexlet-project/actions/workflows/main.yml)
 # GameCenter Hexlet Project
 
 This repository contains a JavaScript project developed as part of the Hexlet curriculum. The project focuses on building a GameCenter application that allows users to play various games.
